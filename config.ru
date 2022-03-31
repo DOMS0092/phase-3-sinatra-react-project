@@ -14,4 +14,5 @@ use Rack::JSONBodyParser
 # Our application
 use AlbumsController
 run ApplicationController
+use TestsController
 use TracksController
