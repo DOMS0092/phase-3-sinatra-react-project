@@ -3,9 +3,9 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 import Home from "./components/Home";
 import Header from "./components/Header";
 import Navbar from "./components/Navbar";
-import AlbumCard from "./components/AlbumCard";
 import AlbumForm from "./components/AlbumForm";
-import AlbumContainer from "./containers/AlbumContainer";
+import AlbumContainer from "./containers/AlbumsContainer";
+import AlbumDetails from './components/AlbumDetails';
 
 
 
@@ -13,30 +13,28 @@ import AlbumContainer from "./containers/AlbumContainer";
 function App() {
   return (
     <div className="App">
-      <router>
+      <Router>
         <Navbar />
         <Header slogan="Music" storename="Add great music to this playlist"/>
-        <switch>
-          <Route path="/album/new">
-            <AlbumForm/>
+        <Switch>
+          <Route path="/albums/new">
+            <AlbumForm />
           </Route>
 
-        <Route path="/album/:id">
-          <AlbumCard />
+        <Route path="/albums/:id">
+          <AlbumDetails />
           </Route>
-        <Route path="albums">
+        <Route path="/albums">
           <AlbumContainer />
         </Route>
-        <Route path="/profile">
-          <TrackProfile />
-        </Route>
+       
         <Route path="/">
           <Home />
         </Route>
 
         
-        </switch>
-      </router>
+        </Switch>
+      </Router>
   
     </div>
   );
