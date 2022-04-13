@@ -1,118 +1,69 @@
-# Phase 3 Project Guidelines
+# Phase 3 Sinatra-React-Project
 
-## Learning Goals
+## Description
 
-- Build a web basic API with Sinatra and Active Record to support a React
-  frontend
-
-## Introduction
-
-Congrats on getting through all the material for Phase 3! Now's the time to put
-it all together and build something from scratch to reinforce what you know and
-expand your horizons.
-
-The focus of this project is **building a Sinatra API backend** that uses
-**Active Record** to access and persist data in a database, which will be used
-by a separate **React frontend** that interacts with the database via the API.
-
-## Requirements
-
-For this project, you must:
-
-- Use Active Record to interact with a database.
-- Have a minimum of two models with a one-to-many relationship.
-- Create API routes in Sinatra that handles at least three different CRUD
-  actions for at least one of your Active Record models.
-- Build a separate React frontend application that interacts with the API to
-  perform CRUD actions.
-- Use good OO design patterns. You should have separate classes for each of your
-  models, and create instance and class methods as necessary.
-
-For example, build a todo list application with a React frontend interface and a
-Sinatra backend API, where a user can:
-
+- The goal of this project is to build a web basic API with Sinatra and Active Record to support a React
+  frontend. Where users can 
+  
 - **Create** a new todo
 - **Read** a list of all todos
 - **Update** an individual todo
 - **Delete** a todo
 
-A `Todo` can be tagged with a `Category`, so that each todo _belongs to_ a
-category and each category _has many_ todos.
+  I chose to build an application on Music so that users could have a place to upload and share some of their most enjoyed songs/albums. 
 
-## Getting Started
+## Requirements
 
-### Backend Setup
+- Ruby 2.7.4
+- NodeJS (v14 or higher), and npm
+- Heroku CLI
+- Postgresql
 
-This repository has all the starter code needed to get a Sinatra backend up and
-running. [**Fork and clone**][fork link] this repository to get started. Then, run
-`bundle install` to install the gems.
+The focus of this project is **building a Sinatra API backend** that uses
+**Active Record** to access and persist data in a database, which will be used
+by a separate **React frontend** that interacts with the database via the API.
 
-[fork link]: https://github.com/learn-co-curriculum/phase-3-sinatra-react-project/fork
+## Setup
 
-The `app/controllers/application_controller.rb` file has an example GET route
-handler. Replace this route with routes for your project.
+Fork and clone this repository 
 
-You can start your server with:
+Then run:
 
-```console
-$ bundle exec rake server
-```
+bundle install
+rails db:create
+npm install --prefix client
 
-This will run your server on port
-[http://localhost:9292](http://localhost:9292).
+You can use the following commands to run the application:
 
-### Frontend Setup
+rails s: run the backend on http://localhost:3000
+npm start --prefix client: run the frontend on http://localhost:9393
+rails start: run the frontend and backend together with one command
 
-Your backend and your frontend should be in **two different repositories**.
+## Available Scripts
 
-Create a new repository in a **separate folder** with a React app for your
-frontend. `cd` out of the backend project directory, and use
-[create-react-app][] to generate the necessary code for your React frontend:
+In the project directory, you can run:
 
-```console
-$ npx create-react-app my-app-frontend
-```
+npm start
+Runs the app in the development mode.
+Open http://localhost:3000 to view it in your browser.
 
-After creating the project locally, you should also
-[create a repository on GitHub][create repo] to host your repo and help
-collaborate, if you're working with a partner.
+The page will reload when you make changes.
+You may also see any lint errors in the console.
 
-### Fetch Example
+npm test
+Launches the test runner in the interactive watch mode.
+See the section about running tests for more information.
 
-Your React app should make fetch requests to your Sinatra backend! Here's an
-example:
+npm run build
+Builds the app for production to the build folder.
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-```js
-fetch("http://localhost:9292/test")
-  .then((r) => r.json())
-  .then((data) => console.log(data));
-```
+The build is minified and the filenames include the hashes.
+Your app is ready to be deployed!
 
-## Project Tips
-
-- This project is intended to focus more on the backend than the frontend, so
-  try and keep the React side of things relatively simple. Focus on working with
-  Active Record and performing CRUD actions. What are some interesting queries you can write? What kinds of questions can you ask of your data?
-- Once you have a project idea, come up with a domain model and decide what
-  relationships exist between the models in your application. Use a tool like
-  [dbdiagram.io][] to help visualize your models.
-- Decide on your API endpoints. What data should they return? What kind of CRUD
-  action should they perform? What data do they need from the client?
-- Use [Postman][postman download] to test your endpoints.
-- Use `binding.pry` to debug your requests on the server. It's very helpful to use a
-  `binding.pry` in your controller within a route to see what `params` are being
-  sent.
-- Use the [Network Tab in the Dev Tools][network tab] in the frontend to debug
-  your requests.
+See the section about deployment for more information
 
 ## Resources
-
-- [create-react-app][]
-- [dbdiagram.io][]
-- [Postman][postman download]
-
-[create-react-app]: https://create-react-app.dev/docs/getting-started
-[create repo]: https://docs.github.com/en/get-started/quickstart/create-a-repo
-[dbdiagram.io]: https://dbdiagram.io/
-[postman download]: https://www.postman.com/downloads/
-[network tab]: https://developer.chrome.com/docs/devtools/network/
+create-react-app
+dbdiagram.io
+Postman

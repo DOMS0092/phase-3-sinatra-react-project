@@ -1,5 +1,6 @@
 require_relative "./config/environment"
 
+
 # Allow CORS (Cross-Origin Resource Sharing) requests
 use Rack::Cors do
   allow do
@@ -13,6 +14,6 @@ use Rack::JSONBodyParser
 
 # Our application
 use AlbumsController
-run ApplicationController
-use TestsController
 use TracksController
+run ApplicationController
+

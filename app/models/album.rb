@@ -1,3 +1,5 @@
 class Album < ActiveRecord::Base
-    has_many :tracks #716 memthods now with Active method
+    has_many :tracks #716 methods
+    validates :title, :total_time, :artist, :release_year, presence: true
 end
+
