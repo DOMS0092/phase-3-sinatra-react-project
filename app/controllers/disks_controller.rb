@@ -8,12 +8,15 @@ class AlbumsController < ApplicationController
   # POST: /albums
   post "/albums" do
     album = Album.create(title: params[:title], release_year: params[:release_year], total_time: params[:total_time], artist: params[:artist])
-    binding.pry
     if album.id 
       album.to_json(include: :tracks)
     else 
       {error: album.errors.full_messages.to_sentence}.to_json
     end
+  end
+  get "/albums/longest-title" do
+    album = Album.longest_title
+    album.to_json(include: :tracks)
   end
 
   # GET: /albums/5
@@ -48,4 +51,6 @@ end
     {error: "album can not be found"}.to_json
   end
   end
+
+  #Get: /albums/longest-title
 end

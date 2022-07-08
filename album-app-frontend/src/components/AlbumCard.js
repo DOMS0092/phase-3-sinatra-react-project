@@ -2,6 +2,8 @@ import {Link} from "react-router-dom"
 
 
 
+
+
 const AlbumCard = ({album}) => {
   return (
     <div>
@@ -11,7 +13,10 @@ const AlbumCard = ({album}) => {
        <h3>Cd Total Time: {album.total_time}</h3> 
        <h3>Release Year: {album.release_year}</h3> 
        <hr />
+
+  
     </div>
+
   )
 }
 
