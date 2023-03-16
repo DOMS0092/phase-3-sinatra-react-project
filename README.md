@@ -1,16 +1,12 @@
 # Phase 3 Sinatra-React-Project
 
-## Description
+## Introduction
 
-- The goal of this project is to build a web basic API with Sinatra and Active Record to support a React
-  frontend. Where users can 
-  
-- **Create** a new todo
-- **Read** a list of all todos
-- **Update** an individual todo
-- **Delete** a todo
+Welcome to Project 3! My the goal for this application to is put it all together and build something from scratch to reinforce what I know and expand the horizons.
 
-  I chose to build an application on Music so that users could have a place to upload and share some of their most enjoyed songs/albums. 
+The focus of this project is to build a Sinatra API backend that uses Active Record to access and persist data in a database, which will be used by a separate React frontend that interacts with the database via the API.
+
+ With that being said I chose to build a Music application where users can have a upload and share some of their most loved albums/songs. 
 
 ## Requirements
 
